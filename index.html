@@ -1,0 +1,1513 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AutoScale — Brand Manual & Social Media Kit</title>
+<link rel="icon" href="https://raw.githubusercontent.com/richard36901-source/Home-page/main/logo.jpg" type="image/jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #060d1a;
+  --bg2: #0a1220;
+  --glass: rgba(12,26,56,0.55);
+  --border: rgba(80,140,255,0.15);
+  --border-soft: rgba(80,140,255,0.08);
+  --text: #e8f0ff;
+  --text2: rgba(232,240,255,0.75);
+  --muted: #6a85b6;
+  --muted2: #4a6090;
+  --accent: #3a8ef6;
+  --accent2: #1dffd4;
+  --warn: #ffb347;
+  --radius: 18px;
+  --radius-sm: 12px;
+  --radius-xs: 8px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Sora', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background:
+    radial-gradient(ellipse 80vw 55vh at 10% -5%, rgba(30,90,220,0.2) 0%, transparent 65%),
+    radial-gradient(ellipse 60vw 40vh at 90% 10%, rgba(0,200,180,0.09) 0%, transparent 60%),
+    radial-gradient(ellipse 100vw 30vh at 50% 100%, rgba(10,30,80,0.4) 0%, transparent 70%);
+  pointer-events: none; z-index: 0;
+}
+body::after {
+  content: '';
+  position: fixed; inset: 0;
+  background-image:
+    linear-gradient(rgba(58,142,246,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(58,142,246,0.035) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none; z-index: 0;
+}
+
+/* ── Layout ── */
+.page { position: relative; z-index: 1; max-width: 960px; margin: 0 auto; padding: 0 24px 120px; }
+
+/* ── Nav ── */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(6,13,26,0.85);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 24px;
+}
+.nav-inner {
+  max-width: 960px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 56px; gap: 16px;
+}
+.nav-logo {
+  display: flex; align-items: center; gap: 10px;
+  text-decoration: none;
+}
+.nav-logomark {
+  width: 32px; height: 32px; border-radius: 8px;
+  background: linear-gradient(135deg, #0d2a6e, #0a4a3a);
+  border: 1px solid rgba(58,142,246,0.3);
+  overflow: hidden; display: grid; place-items: center;
+  font-family: 'Space Mono', monospace; font-size: 10px;
+  font-weight: 700; color: #fff;
+}
+.nav-logomark img { width: 100%; height: 100%; object-fit: cover; }
+.nav-brand {
+  font-size: 15px; font-weight: 700;
+  background: linear-gradient(90deg, #c8deff, #1dffd4 80%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.nav-links { display: flex; gap: 4px; flex-wrap: wrap; }
+.nav-links a {
+  font-size: 11.5px; color: var(--muted); text-decoration: none;
+  padding: 5px 10px; border-radius: 6px;
+  transition: all 0.15s; font-family: 'Space Mono', monospace;
+  white-space: nowrap;
+}
+.nav-links a:hover { background: rgba(58,142,246,0.1); color: var(--accent); }
+
+/* ── Hero ── */
+.hero {
+  text-align: center; padding: 72px 0 56px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 64px;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 10.5px; font-family: 'Space Mono', monospace;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: var(--accent); border: 1px solid rgba(58,142,246,0.2);
+  background: rgba(58,142,246,0.06); padding: 5px 14px;
+  border-radius: 999px; margin-bottom: 24px;
+}
+.hero h1 {
+  font-size: clamp(32px, 5vw, 52px); font-weight: 700;
+  line-height: 1.15; letter-spacing: -1px;
+  background: linear-gradient(135deg, #e8f0ff 0%, #c8deff 40%, #1dffd4 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; margin-bottom: 16px;
+}
+.hero p {
+  font-size: 16px; color: var(--muted); max-width: 540px;
+  margin: 0 auto 32px; line-height: 1.7;
+}
+.hero-version {
+  font-size: 11px; font-family: 'Space Mono', monospace;
+  color: var(--muted2);
+}
+
+/* ── Section ── */
+.section { margin-bottom: 80px; }
+.section-header { margin-bottom: 32px; }
+.section-num {
+  font-size: 10px; font-family: 'Space Mono', monospace;
+  color: var(--accent2); letter-spacing: 2px;
+  text-transform: uppercase; opacity: 0.7; margin-bottom: 6px;
+}
+.section-title {
+  font-size: 28px; font-weight: 700; letter-spacing: -0.5px;
+  color: var(--text); margin-bottom: 8px;
+}
+.section-desc { font-size: 14px; color: var(--muted); line-height: 1.7; max-width: 600px; }
+
+/* ── Cards ── */
+.card {
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  backdrop-filter: blur(12px);
+}
+.card-sm {
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 18px;
+  backdrop-filter: blur(8px);
+}
+.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+.grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; }
+
+/* ── Labels ── */
+.label {
+  font-size: 10px; font-family: 'Space Mono', monospace;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--muted2); margin-bottom: 8px; display: block;
+}
+.tag {
+  display: inline-block; font-size: 10px; font-family: 'Space Mono', monospace;
+  padding: 3px 8px; border-radius: 4px;
+  background: rgba(58,142,246,0.1); color: var(--accent);
+  border: 1px solid rgba(58,142,246,0.2); margin-bottom: 8px;
+}
+
+/* ── Colors ── */
+.color-swatch {
+  border-radius: 12px; padding: 16px; margin-bottom: 10px;
+  display: flex; flex-direction: column; gap: 4px; min-height: 100px;
+}
+.swatch-name { font-size: 12px; font-weight: 700; }
+.swatch-hex { font-size: 10.5px; font-family: 'Space Mono', monospace; opacity: 0.8; }
+.swatch-use { font-size: 10px; opacity: 0.7; margin-top: 2px; }
+
+/* ── Logo showcase ── */
+.logo-box {
+  border-radius: var(--radius-sm);
+  display: flex; flex-direction: column; align-items: center;
+  justify-content: center; gap: 12px; padding: 28px 20px;
+  border: 1px solid var(--border);
+}
+.logo-box.dark { background: #060d1a; }
+.logo-box.light { background: #f0f4ff; }
+.logo-box.white { background: #ffffff; }
+.logo-mark-lg {
+  width: 80px; height: 80px; border-radius: 20px;
+  background: linear-gradient(135deg, #0d2a6e, #0a4a3a);
+  border: 1px solid rgba(58,142,246,0.3);
+  box-shadow: 0 0 32px rgba(58,142,246,0.3);
+  overflow: hidden; display: grid; place-items: center;
+}
+.logo-mark-lg img { width: 100%; height: 100%; object-fit: cover; }
+.logo-mark-md {
+  width: 48px; height: 48px; border-radius: 12px;
+  background: linear-gradient(135deg, #0d2a6e, #0a4a3a);
+  border: 1px solid rgba(58,142,246,0.3);
+  overflow: hidden; display: grid; place-items: center;
+}
+.logo-mark-md img { width: 100%; height: 100%; object-fit: cover; }
+.logo-mark-sm {
+  width: 32px; height: 32px; border-radius: 8px;
+  background: linear-gradient(135deg, #0d2a6e, #0a4a3a);
+  border: 1px solid rgba(58,142,246,0.3);
+  overflow: hidden; display: grid; place-items: center;
+}
+.logo-mark-sm img { width: 100%; height: 100%; object-fit: cover; }
+.logo-fallback { font-family: 'Space Mono', monospace; font-weight: 700; color: #fff; }
+.logo-name-lg {
+  font-size: 28px; font-weight: 700; letter-spacing: -0.5px;
+  background: linear-gradient(90deg, #c8deff, #1dffd4 80%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.logo-name-md {
+  font-size: 18px; font-weight: 700;
+  background: linear-gradient(90deg, #c8deff, #1dffd4 80%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.logo-sub { font-size: 11px; color: var(--muted); font-family: 'Space Mono', monospace; letter-spacing: 0.5px; }
+.logo-caption { font-size: 11px; font-family: 'Space Mono', monospace; color: var(--muted2); margin-top: 4px; }
+
+/* ── Typography ── */
+.type-sample {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border-soft);
+}
+.type-sample:last-child { border-bottom: none; }
+
+/* ── Do / Dont ── */
+.do-dont { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.do-box {
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(29,255,212,0.25);
+  background: rgba(29,255,212,0.04);
+  padding: 16px;
+}
+.dont-box {
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255,80,80,0.25);
+  background: rgba(255,80,80,0.04);
+  padding: 16px;
+}
+.do-label { font-size: 10px; font-family: 'Space Mono', monospace; color: var(--accent2); letter-spacing: 1px; margin-bottom: 8px; text-transform: uppercase; }
+.dont-label { font-size: 10px; font-family: 'Space Mono', monospace; color: #ff6b6b; letter-spacing: 1px; margin-bottom: 8px; text-transform: uppercase; }
+.rule-item { font-size: 13px; color: var(--text2); line-height: 1.6; margin-bottom: 6px; padding-right: 14px; position: relative; }
+.rule-item::before { content: '→'; position: absolute; right: 0; color: var(--muted2); font-size: 11px; top: 2px; }
+
+/* ── Social mock ── */
+.fb-mock {
+  background: #fff; border-radius: 12px; overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+  font-family: 'Sora', -apple-system, sans-serif;
+}
+.fb-cover {
+  height: 140px;
+  background: linear-gradient(135deg, #060d1a 0%, #0d2a6e 40%, #0a4a3a 100%);
+  position: relative; overflow: hidden;
+}
+.fb-cover::after {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(58,142,246,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(58,142,246,0.08) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+.fb-cover-text {
+  position: absolute; bottom: 16px; right: 16px; z-index: 1; text-align: right;
+}
+.fb-cover-title { font-size: 22px; font-weight: 700; color: #fff; line-height: 1.2; }
+.fb-cover-sub { font-size: 11px; color: rgba(255,255,255,0.6); font-family: 'Space Mono', monospace; }
+.fb-profile-area {
+  background: #fff; padding: 0 16px 14px;
+  display: flex; align-items: flex-end; gap: 12px;
+}
+.fb-avatar {
+  width: 68px; height: 68px; border-radius: 50%;
+  background: linear-gradient(135deg, #0d2a6e, #0a4a3a);
+  border: 3px solid #fff; margin-top: -28px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.fb-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.fb-avatar-fallback { font-family: 'Space Mono', monospace; font-size: 16px; font-weight: 700; color: #fff; }
+.fb-info { padding-bottom: 4px; }
+.fb-name { font-size: 15px; font-weight: 700; color: #1c1e21; }
+.fb-category { font-size: 11px; color: #65676b; }
+.fb-body { padding: 12px 16px; border-top: 1px solid #e4e6eb; }
+.fb-about { font-size: 13px; color: #444; line-height: 1.6; margin-bottom: 10px; }
+.fb-stats { display: flex; gap: 16px; }
+.fb-stat { text-align: center; }
+.fb-stat-n { font-size: 15px; font-weight: 700; color: #1c1e21; }
+.fb-stat-l { font-size: 10px; color: #65676b; }
+
+/* ── Post mock ── */
+.post-mock {
+  background: #fff; border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  overflow: hidden; font-family: 'Sora', sans-serif;
+}
+.post-header { padding: 12px 14px; display: flex; align-items: center; gap: 9px; }
+.post-avatar {
+  width: 38px; height: 38px; border-radius: 50%; flex-shrink: 0;
+  background: linear-gradient(135deg, #0d2a6e, #0a4a3a);
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.post-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.post-avatar-fb { font-family: 'Space Mono', monospace; font-size: 10px; font-weight: 700; color: #fff; }
+.post-name { font-size: 13px; font-weight: 700; color: #1c1e21; }
+.post-meta { font-size: 10px; color: #65676b; }
+.post-img {
+  height: 140px;
+  background: linear-gradient(135deg, #060d1a 0%, #0d2a6e 50%, #0a4a3a 100%);
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
+}
+.post-img::after {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(58,142,246,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(58,142,246,0.07) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+.post-img-text { font-size: 17px; font-weight: 700; color: #fff; text-align: center; z-index: 1; line-height: 1.4; padding: 0 16px; }
+.post-caption { padding: 10px 14px; font-size: 12px; color: #333; line-height: 1.6; }
+.post-caption span { font-weight: 700; }
+.post-hashtags { font-size: 11px; color: #1877f2; margin-top: 4px; }
+.post-reactions { padding: 6px 14px 10px; font-size: 11px; color: #65676b; border-top: 1px solid #e4e6eb; margin-top: 4px; display: flex; gap: 12px; }
+
+/* ── IG mock ── */
+.ig-mock {
+  background: #fff; border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  overflow: hidden; font-family: 'Sora', sans-serif;
+}
+.ig-header { padding: 10px 12px; display: flex; align-items: center; gap: 8px; border-bottom: 0.5px solid #e0e0e0; }
+.ig-avatar-ring {
+  width: 34px; height: 34px; border-radius: 50%;
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  padding: 2px; display: grid; place-items: center;
+}
+.ig-avatar-inner {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: linear-gradient(135deg, #0d2a6e, #0a4a3a);
+  border: 2px solid #fff;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.ig-avatar-inner img { width: 100%; height: 100%; object-fit: cover; }
+.ig-avatar-fb { font-family: 'Space Mono', monospace; font-size: 8px; font-weight: 700; color: #fff; }
+.ig-username { font-size: 12px; font-weight: 700; color: #000; }
+.ig-img {
+  height: 160px;
+  background: linear-gradient(135deg, #060d1a 0%, #0d2a6e 50%, #0a4a3a 100%);
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
+}
+.ig-img::after {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(58,142,246,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(58,142,246,0.07) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+.ig-img-text { font-size: 16px; font-weight: 700; color: #fff; text-align: center; z-index: 1; padding: 0 16px; line-height: 1.4; }
+.ig-actions { padding: 8px 12px 4px; display: flex; gap: 12px; font-size: 18px; }
+.ig-caption { padding: 0 12px 10px; font-size: 11.5px; color: #333; line-height: 1.6; }
+.ig-caption b { font-weight: 700; color: #000; }
+.ig-tags { font-size: 11px; color: #0095f6; margin-top: 3px; }
+
+/* ── LI mock ── */
+.li-mock {
+  background: #fff; border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+  overflow: hidden; font-family: 'Sora', sans-serif;
+}
+.li-cover {
+  height: 72px;
+  background: linear-gradient(135deg, #060d1a, #0d2a6e 60%, #0a4a3a);
+}
+.li-profile-area { padding: 0 16px 12px; display: flex; align-items: flex-end; gap: 12px; }
+.li-avatar {
+  width: 60px; height: 60px; border-radius: 8px;
+  background: linear-gradient(135deg, #0d2a6e, #0a4a3a);
+  border: 3px solid #fff; margin-top: -22px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.li-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.li-avatar-fb { font-family: 'Space Mono', monospace; font-size: 14px; font-weight: 700; color: #fff; }
+.li-info { padding-bottom: 2px; }
+.li-name { font-size: 14px; font-weight: 700; color: #000; }
+.li-title { font-size: 11px; color: #666; }
+.li-body { padding: 10px 16px 14px; border-top: 1px solid #e0e0e0; }
+.li-tagline { font-size: 13px; color: #333; line-height: 1.6; margin-bottom: 8px; }
+.li-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.li-tag {
+  font-size: 10px; color: #0a66c2; border: 1px solid #0a66c2;
+  border-radius: 999px; padding: 2px 9px;
+}
+
+/* ── WA mock ── */
+.wa-mock {
+  background: #0b141a; border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+  overflow: hidden; font-family: 'Sora', sans-serif;
+}
+.wa-header {
+  background: #1f2c34; padding: 10px 14px;
+  display: flex; align-items: center; gap: 10px;
+}
+.wa-avatar {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: linear-gradient(135deg, #0d2a6e, #0a4a3a);
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden; flex-shrink: 0;
+}
+.wa-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.wa-avatar-fb { font-family: 'Space Mono', monospace; font-size: 9px; font-weight: 700; color: #fff; }
+.wa-name { font-size: 13px; font-weight: 700; color: #e9edef; }
+.wa-status { font-size: 10px; color: #25D366; }
+.wa-body { padding: 12px; display: flex; flex-direction: column; gap: 8px; }
+.wa-msg {
+  background: #202c33; border-radius: 10px 10px 10px 0;
+  padding: 8px 12px; max-width: 85%; font-size: 12px;
+  color: #e9edef; line-height: 1.6;
+}
+.wa-msg-sent {
+  background: #005c4b; border-radius: 10px 10px 0 10px;
+  padding: 8px 12px; max-width: 85%; font-size: 12px;
+  color: #e9edef; line-height: 1.6; align-self: flex-end;
+}
+.wa-time { font-size: 9.5px; color: #8696a0; margin-top: 3px; text-align: left; }
+
+/* ── Divider ── */
+.divider { height: 1px; background: var(--border); margin: 40px 0; }
+
+/* ── Spec table ── */
+.spec-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.spec-table th {
+  text-align: left; font-size: 10px; font-family: 'Space Mono', monospace;
+  letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted2);
+  padding: 8px 12px; border-bottom: 1px solid var(--border);
+}
+.spec-table td {
+  padding: 10px 12px; border-bottom: 1px solid var(--border-soft);
+  color: var(--text2); vertical-align: top; line-height: 1.6;
+}
+.spec-table td:first-child { color: var(--text); font-weight: 600; white-space: nowrap; }
+.spec-table tr:last-child td { border-bottom: none; }
+.mono { font-family: 'Space Mono', monospace; font-size: 11px; }
+
+/* ── Post template cards ── */
+.post-tpl {
+  background: var(--glass); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); overflow: hidden;
+}
+.post-tpl-img {
+  height: 90px;
+  background: linear-gradient(135deg, #060d1a 0%, #0d2a6e 50%, #0a4a3a 100%);
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
+}
+.post-tpl-img::after {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(58,142,246,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(58,142,246,0.07) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+.post-tpl-label { font-size: 13px; font-weight: 700; color: #fff; z-index: 1; text-align: center; padding: 0 12px; line-height: 1.4; }
+.post-tpl-body { padding: 12px; }
+.post-tpl-title { font-size: 12px; font-weight: 700; color: var(--text); margin-bottom: 5px; }
+.post-tpl-text { font-size: 11px; color: var(--muted); line-height: 1.6; }
+
+/* ── Quote / callout ── */
+.callout {
+  border-right: 3px solid var(--accent);
+  background: rgba(58,142,246,0.06);
+  border-radius: 0 var(--radius-xs) var(--radius-xs) 0;
+  padding: 14px 18px; font-size: 13px; color: var(--text2);
+  line-height: 1.7; margin: 20px 0;
+}
+.callout.teal { border-color: var(--accent2); background: rgba(29,255,212,0.05); }
+.callout.warn { border-color: var(--warn); background: rgba(255,179,71,0.05); }
+
+/* ── Scroll anchor offset ── */
+.anchor { scroll-margin-top: 70px; }
+
+/* ── Footer ── */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 32px 0 48px;
+  text-align: center; margin-top: 40px;
+}
+footer .f-logo {
+  font-size: 18px; font-weight: 700;
+  background: linear-gradient(90deg, #c8deff, #1dffd4 80%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; margin-bottom: 8px;
+}
+footer p { font-size: 11px; color: var(--muted2); font-family: 'Space Mono', monospace; }
+
+/* Responsive */
+@media(max-width:640px) {
+  .do-dont { grid-template-columns: 1fr; }
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  .nav-links { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="#">
+      <div class="nav-logomark">
+        <img src="https://raw.githubusercontent.com/richard36901-source/Home-page/main/logo.jpg" alt="AS" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <span class="logo-fallback" style="display:none">AS</span>
+      </div>
+      <span class="nav-brand">AutoScale</span>
+    </a>
+    <div class="nav-links">
+      <a href="#brand">Brand</a>
+      <a href="#colors">Colors</a>
+      <a href="#typography">Typography</a>
+      <a href="#logo-guide">Logo Guide</a>
+      <a href="#voice">Voice</a>
+      <a href="#social">Social</a>
+      <a href="#posts">Posts</a>
+      <a href="#rules">Rules</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page">
+
+<!-- HERO -->
+<div class="hero anchor" id="top">
+  <div class="hero-badge">📘 Brand Manual v1.0</div>
+  <h1>AutoScale<br>Brand Manual</h1>
+  <p>The complete design system, voice guidelines, and social media kit for designers, developers, and content creators.</p>
+  <div class="hero-version">Last updated: <span id="hdate"></span> &nbsp;·&nbsp; For internal & agency use</div>
+</div>
+
+<!-- ══════════════════════════════════════
+     01. BRAND OVERVIEW
+══════════════════════════════════════ -->
+<div class="section anchor" id="brand">
+  <div class="section-header">
+    <div class="section-num">01 — Brand Overview</div>
+    <div class="section-title">Who We Are</div>
+    <div class="section-desc">AutoScale is an Israeli AI & automation agency helping small businesses, startups, and mid-size companies grow smarter through intelligent automations and AI-powered tools.</div>
+  </div>
+
+  <div class="grid-2" style="margin-bottom:20px">
+    <div class="card">
+      <span class="label">Mission</span>
+      <div style="font-size:15px;font-weight:600;color:var(--text);line-height:1.6">Make powerful business automation accessible to every company — not just enterprise.</div>
+    </div>
+    <div class="card">
+      <span class="label">Vision</span>
+      <div style="font-size:15px;font-weight:600;color:var(--text);line-height:1.6">Become the leading AI automation agency in Israel and expand globally — growing with our clients.</div>
+    </div>
+  </div>
+
+  <div class="grid-3">
+    <div class="card-sm">
+      <div style="font-size:22px;margin-bottom:8px">⚡</div>
+      <div style="font-size:13px;font-weight:700;margin-bottom:4px">Business Automation</div>
+      <div style="font-size:12px;color:var(--muted);line-height:1.6">WhatsApp bots, CRM flows, payment systems, notifications — all automated.</div>
+    </div>
+    <div class="card-sm">
+      <div style="font-size:22px;margin-bottom:8px">🤖</div>
+      <div style="font-size:13px;font-weight:700;margin-bottom:4px">AI Solutions</div>
+      <div style="font-size:12px;color:var(--muted);line-height:1.6">AI chatbots, content generation, smart analytics, and AI-powered workflows.</div>
+    </div>
+    <div class="card-sm">
+      <div style="font-size:22px;margin-bottom:8px">🌐</div>
+      <div style="font-size:13px;font-weight:700;margin-bottom:4px">Web & GitHub Pages</div>
+      <div style="font-size:12px;color:var(--muted);line-height:1.6">Fast, branded landing pages and mini-sites deployed on GitHub Pages.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     02. COLORS
+══════════════════════════════════════ -->
+<div class="section anchor" id="colors">
+  <div class="section-header">
+    <div class="section-num">02 — Color System</div>
+    <div class="section-title">Color Palette</div>
+    <div class="section-desc">Every color has a purpose. Never use colors arbitrarily. The dark background is mandatory for all branded digital touchpoints.</div>
+  </div>
+
+  <div class="grid-3" style="margin-bottom:24px">
+    <div>
+      <div class="color-swatch" style="background:#060d1a;border:1px solid rgba(80,140,255,0.2)">
+        <div class="swatch-name" style="color:#e8f0ff">Background Primary</div>
+        <div class="swatch-hex" style="color:#6a85b6">#060d1a</div>
+        <div class="swatch-use" style="color:#4a6090">Main page background</div>
+      </div>
+    </div>
+    <div>
+      <div class="color-swatch" style="background:rgba(12,26,56,0.85);border:1px solid rgba(80,140,255,0.2)">
+        <div class="swatch-name" style="color:#e8f0ff">Glass / Cards</div>
+        <div class="swatch-hex" style="color:#6a85b6">rgba(12,26,56,0.55)</div>
+        <div class="swatch-use" style="color:#4a6090">All card backgrounds</div>
+      </div>
+    </div>
+    <div>
+      <div class="color-swatch" style="background:#3a8ef6;border:1px solid rgba(58,142,246,0.4)">
+        <div class="swatch-name" style="color:#fff">Accent Blue</div>
+        <div class="swatch-hex" style="color:rgba(255,255,255,0.8)">#3a8ef6</div>
+        <div class="swatch-use" style="color:rgba(255,255,255,0.7)">Labels, borders, icons</div>
+      </div>
+    </div>
+    <div>
+      <div class="color-swatch" style="background:linear-gradient(90deg,#c8deff,#1dffd4);border:1px solid rgba(29,255,212,0.3)">
+        <div class="swatch-name" style="color:#060d1a">Brand Gradient</div>
+        <div class="swatch-hex" style="color:rgba(6,13,26,0.7)">#c8deff → #1dffd4</div>
+        <div class="swatch-use" style="color:rgba(6,13,26,0.6)">Logo text, headings</div>
+      </div>
+    </div>
+    <div>
+      <div class="color-swatch" style="background:#1dffd4;border:1px solid rgba(29,255,212,0.4)">
+        <div class="swatch-name" style="color:#060d1a">Teal Accent</div>
+        <div class="swatch-hex" style="color:rgba(6,13,26,0.7)">#1dffd4</div>
+        <div class="swatch-use" style="color:rgba(6,13,26,0.6)">Success, highlights</div>
+      </div>
+    </div>
+    <div>
+      <div class="color-swatch" style="background:#ffb347;border:1px solid rgba(255,179,71,0.4)">
+        <div class="swatch-name" style="color:#060d1a">Warning Amber</div>
+        <div class="swatch-hex" style="color:rgba(6,13,26,0.7)">#ffb347</div>
+        <div class="swatch-use" style="color:rgba(6,13,26,0.6)">Warnings, notices</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card-sm">
+      <span class="label">Text Colors</span>
+      <table class="spec-table">
+        <tr><td>Primary Text</td><td class="mono">#e8f0ff</td></tr>
+        <tr><td>Secondary Text</td><td class="mono">rgba(232,240,255,0.75)</td></tr>
+        <tr><td>Muted Text</td><td class="mono">#6a85b6</td></tr>
+        <tr><td>Subtle Text</td><td class="mono">#4a6090</td></tr>
+      </table>
+    </div>
+    <div class="card-sm">
+      <span class="label">Border Colors</span>
+      <table class="spec-table">
+        <tr><td>Default Border</td><td class="mono">rgba(80,140,255,0.13)</td></tr>
+        <tr><td>Soft Border</td><td class="mono">rgba(80,140,255,0.08)</td></tr>
+        <tr><td>Logo Border</td><td class="mono">rgba(58,142,246,0.28)</td></tr>
+        <tr><td>Green (WhatsApp)</td><td class="mono">#25D366</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="callout warn" style="margin-top:20px">
+    ⚠️ <strong>Never</strong> use white backgrounds for AutoScale digital products. The brand lives on dark. White is only allowed inside social media mockups or third-party platform embeds.
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     03. TYPOGRAPHY
+══════════════════════════════════════ -->
+<div class="section anchor" id="typography">
+  <div class="section-header">
+    <div class="section-num">03 — Typography</div>
+    <div class="section-title">Type System</div>
+    <div class="section-desc">Two fonts only. Sora for all body and UI text. Space Mono for labels, code, metadata, and technical identifiers.</div>
+  </div>
+
+  <div class="grid-2" style="margin-bottom:24px">
+    <div class="card">
+      <span class="label">Primary Font — Sora</span>
+      <div style="font-family:'Sora',sans-serif">
+        <div style="font-size:32px;font-weight:700;color:var(--text);line-height:1.2;margin-bottom:8px">Aa Bb Cc</div>
+        <div style="font-size:14px;color:var(--text2);line-height:1.7">All headings, body text, buttons, UI copy. Weights: 300 Light, 400 Regular, 600 SemiBold, 700 Bold.</div>
+      </div>
+    </div>
+    <div class="card">
+      <span class="label">Secondary Font — Space Mono</span>
+      <div style="font-family:'Space Mono',monospace">
+        <div style="font-size:24px;font-weight:700;color:var(--text);line-height:1.2;margin-bottom:8px">01 02 03</div>
+        <div style="font-size:13px;color:var(--text2);line-height:1.7">Labels, section numbers, metadata, code snippets, version numbers, timestamps.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="label">Type Scale</span>
+    <div class="type-sample">
+      <div style="font-size:10px;font-family:'Space Mono',monospace;color:var(--muted2);margin-bottom:4px">H1 — 52px / 700 / tracking -1px</div>
+      <div style="font-size:clamp(28px,4vw,48px);font-weight:700;letter-spacing:-1px;background:linear-gradient(90deg,#c8deff,#1dffd4 80%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">אוטומציות חכמות</div>
+    </div>
+    <div class="type-sample">
+      <div style="font-size:10px;font-family:'Space Mono',monospace;color:var(--muted2);margin-bottom:4px">H2 — 28px / 700 / tracking -0.5px</div>
+      <div style="font-size:clamp(20px,3vw,28px);font-weight:700;letter-spacing:-0.5px;color:var(--text)">Smart Business Automation</div>
+    </div>
+    <div class="type-sample">
+      <div style="font-size:10px;font-family:'Space Mono',monospace;color:var(--muted2);margin-bottom:4px">H3 — 18px / 700</div>
+      <div style="font-size:18px;font-weight:700;color:var(--text)">Service Package Title</div>
+    </div>
+    <div class="type-sample">
+      <div style="font-size:10px;font-family:'Space Mono',monospace;color:var(--muted2);margin-bottom:4px">Body — 14-16px / 400 / line-height 1.7</div>
+      <div style="font-size:14px;color:var(--text2);line-height:1.7">We help businesses automate repetitive tasks, integrate AI, and scale operations without hiring more staff. Our tools work 24/7 so you don't have to.</div>
+    </div>
+    <div class="type-sample">
+      <div style="font-size:10px;font-family:'Space Mono',monospace;color:var(--muted2);margin-bottom:4px">Label — 10px / Space Mono / 600 / 2px tracking / UPPERCASE</div>
+      <div style="font-size:10px;font-family:'Space Mono',monospace;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent)">Section Label</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     04. LOGO GUIDE
+══════════════════════════════════════ -->
+<div class="section anchor" id="logo-guide">
+  <div class="section-header">
+    <div class="section-num">04 — Logo Guide</div>
+    <div class="section-title">Logo Usage</div>
+    <div class="section-desc">The AutoScale logo has three components: the logomark (square icon), the wordmark (gradient text), and the tagline. Use them consistently.</div>
+  </div>
+
+  <div class="grid-3" style="margin-bottom:24px">
+    <div>
+      <div class="logo-box dark">
+        <div class="logo-mark-lg">
+          <img src="https://raw.githubusercontent.com/richard36901-source/Home-page/main/logo.jpg" alt="AS" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="logo-fallback" style="font-size:20px">AS</span>
+        </div>
+        <div class="logo-name-lg">AutoScale</div>
+        <div class="logo-sub">אוטומציות חכמות</div>
+      </div>
+      <div class="logo-caption" style="text-align:center">Full logo — dark bg ✅</div>
+    </div>
+    <div>
+      <div class="logo-box light">
+        <div style="width:80px;height:80px;border-radius:20px;background:linear-gradient(135deg,#0d2a6e,#0a4a3a);border:2px solid rgba(58,142,246,0.5);display:grid;place-items:center;overflow:hidden;">
+          <img src="https://raw.githubusercontent.com/richard36901-source/Home-page/main/logo.jpg" style="width:100%;height:100%;object-fit:cover" onerror="this.style.display='none'">
+        </div>
+        <div style="font-size:28px;font-weight:700;letter-spacing:-0.5px;color:#0d2a6e">AutoScale</div>
+        <div style="font-size:11px;color:#6a85b6;font-family:'Space Mono',monospace">אוטומציות חכמות</div>
+      </div>
+      <div class="logo-caption" style="text-align:center;color:#4a6090">Light bg — use dark wordmark</div>
+    </div>
+    <div>
+      <div class="logo-box dark" style="background:#000">
+        <div class="logo-mark-lg">
+          <img src="https://raw.githubusercontent.com/richard36901-source/Home-page/main/logo.jpg" alt="AS" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="logo-fallback" style="font-size:20px">AS</span>
+        </div>
+      </div>
+      <div class="logo-caption" style="text-align:center">Icon only — for favicon, avatar</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="label">Logo Sizes — All Contexts</span>
+    <table class="spec-table">
+      <tr><th>Context</th><th>Size</th><th>Border Radius</th><th>Notes</th></tr>
+      <tr><td>Tab Favicon</td><td class="mono">32×32 px</td><td class="mono">0</td><td>Use logo.jpg — square crop</td></tr>
+      <tr><td>Apple Touch Icon</td><td class="mono">180×180 px</td><td class="mono">0 (iOS rounds it)</td><td>Same logo.jpg file</td></tr>
+      <tr><td>Nav / Header</td><td class="mono">32×32 px</td><td class="mono">8px</td><td>With "AutoScale" text beside</td></tr>
+      <tr><td>Page Hero / Cover</td><td class="mono">72×72 px</td><td class="mono">18px</td><td>With glow shadow</td></tr>
+      <tr><td>Social Profile Pic</td><td class="mono">400×400 px</td><td class="mono">50% (circle)</td><td>Facebook, Instagram, LinkedIn, WhatsApp</td></tr>
+      <tr><td>Social Cover Photo</td><td class="mono">820×312 px (FB) / 1584×396 px (LI)</td><td class="mono">0</td><td>Dark gradient background</td></tr>
+      <tr><td>Post Watermark</td><td class="mono">48×48 px</td><td class="mono">12px</td><td>Bottom-right corner of posts</td></tr>
+      <tr><td>WhatsApp Group Icon</td><td class="mono">500×500 px</td><td class="mono">0</td><td>Centered on dark bg</td></tr>
+      <tr><td>Favicon .ico</td><td class="mono">16, 32, 48 px</td><td class="mono">0</td><td>Multi-size .ico or PNG</td></tr>
+    </table>
+  </div>
+
+  <div class="callout" style="margin-top:20px">
+    🔗 <strong>Tab logo source:</strong> <code style="font-family:'Space Mono',monospace;font-size:11px;background:rgba(58,142,246,0.1);padding:2px 6px;border-radius:4px">https://raw.githubusercontent.com/richard36901-source/Home-page/main/logo.jpg</code> — use this URL directly in all GitHub Pages HTML files as the favicon href.
+  </div>
+
+  <div class="do-dont" style="margin-top:20px">
+    <div class="do-box">
+      <div class="do-label">✅ Do</div>
+      <div class="rule-item">Always use the logo on dark backgrounds</div>
+      <div class="rule-item">Maintain clear space equal to the logo height around the mark</div>
+      <div class="rule-item">Use the gradient wordmark on dark backgrounds</div>
+      <div class="rule-item">Use the icon-only version for small sizes (under 40px)</div>
+      <div class="rule-item">Keep the tagline "אוטומציות חכמות" in all Hebrew materials</div>
+    </div>
+    <div class="dont-box">
+      <div class="dont-label">❌ Don't</div>
+      <div class="rule-item">Don't stretch or distort the logo</div>
+      <div class="rule-item">Don't use the gradient wordmark on white backgrounds</div>
+      <div class="rule-item">Don't add shadows, outlines, or effects to the logomark</div>
+      <div class="rule-item">Don't change the logo colors under any circumstances</div>
+      <div class="rule-item">Don't use low-resolution versions — always export at 2x</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     05. BRAND VOICE
+══════════════════════════════════════ -->
+<div class="section anchor" id="voice">
+  <div class="section-header">
+    <div class="section-num">05 — Brand Voice & Messaging</div>
+    <div class="section-title">How We Talk</div>
+    <div class="section-desc">AutoScale's voice is friendly, confident, and human. We speak like a smart friend who happens to be an expert — not a corporate robot.</div>
+  </div>
+
+  <div class="grid-2" style="margin-bottom:20px">
+    <div class="card-sm">
+      <span class="label">Personality Traits</span>
+      <div class="rule-item"><strong>Friendly</strong> — Warm and approachable, like talking to a colleague</div>
+      <div class="rule-item"><strong>Confident</strong> — We know our stuff, but not arrogant</div>
+      <div class="rule-item"><strong>Clear</strong> — No jargon unless the audience is technical</div>
+      <div class="rule-item"><strong>Empowering</strong> — We help you grow, we're your partner</div>
+      <div class="rule-item"><strong>Innovative</strong> — We stay ahead, we're excited about the future</div>
+    </div>
+    <div class="card-sm">
+      <span class="label">Core Messages</span>
+      <div class="rule-item">Save time → "Let automation handle the routine. Focus on growth."</div>
+      <div class="rule-item">Save money → "Stop paying for tasks a bot can do in seconds."</div>
+      <div class="rule-item">Scale smart → "Grow without the overhead."</div>
+      <div class="rule-item">AI for everyone → "Enterprise-level AI, startup-friendly pricing."</div>
+      <div class="rule-item">Results → "Real businesses, real results — automated."</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="label">Voice Examples — Hebrew</span>
+    <table class="spec-table">
+      <tr><th>Context</th><th>❌ Don't Say</th><th>✅ Do Say</th></tr>
+      <tr><td>CTA Button</td><td style="color:#ff8888">הגש בקשה לקבלת שירות</td><td style="color:var(--accent2)">בואו נדבר →</td></tr>
+      <tr><td>Value Prop</td><td style="color:#ff8888">אנו מציעים פתרונות אוטומציה מתקדמים</td><td style="color:var(--accent2)">אנחנו חוסכים לך שעות עבודה כל יום</td></tr>
+      <tr><td>About</td><td style="color:#ff8888">החברה הוקמה במטרה לספק שירותים</td><td style="color:var(--accent2)">עזרנו לעשרות עסקים לעבוד פחות ולהרוויח יותר</td></tr>
+      <tr><td>Post Caption</td><td style="color:#ff8888">הכירו את הפתרון החדש שלנו</td><td style="color:var(--accent2)">שלחת 200 הודעות ידנית הבוקר? יש לנו חדשות טובות ☺️</td></tr>
+    </table>
+  </div>
+
+  <div class="card" style="margin-top:16px">
+    <span class="label">Voice Examples — English</span>
+    <table class="spec-table">
+      <tr><th>Context</th><th>❌ Don't Say</th><th>✅ Do Say</th></tr>
+      <tr><td>Headline</td><td style="color:#ff8888">Leveraging AI-driven automation solutions</td><td style="color:var(--accent2)">Work less. Grow more. Automate everything.</td></tr>
+      <tr><td>Description</td><td style="color:#ff8888">We provide comprehensive automation services</td><td style="color:var(--accent2)">We build the bots that run your business while you sleep.</td></tr>
+      <tr><td>CTA</td><td style="color:#ff8888">Submit inquiry</td><td style="color:var(--accent2)">Let's build something →</td></tr>
+      <tr><td>Post</td><td style="color:#ff8888">Announcing our new service offering</td><td style="color:var(--accent2)">What if your CRM updated itself? We made that happen. 🤖</td></tr>
+    </table>
+  </div>
+
+  <div class="grid-3" style="margin-top:20px">
+    <div class="card-sm">
+      <span class="label">Emojis</span>
+      <div style="font-size:12px;color:var(--text2);line-height:1.7">Use emojis in social posts — they make content more engaging. Use sparingly in formal docs. Recommended: 🚀⚡🤖✅📱💬🧠🔧</div>
+    </div>
+    <div class="card-sm">
+      <span class="label">Hashtags (Hebrew)</span>
+      <div style="font-size:11px;color:var(--accent);font-family:'Space Mono',monospace;line-height:1.9">#אוטומציה #בינהמלאכותית #טכנולוגיה #עסקיםקטנים #סטארטאפ #AutoScale #דיגיטל</div>
+    </div>
+    <div class="card-sm">
+      <span class="label">Hashtags (English)</span>
+      <div style="font-size:11px;color:var(--accent);font-family:'Space Mono',monospace;line-height:1.9">#AutoScale #BusinessAutomation #AI #ChatGPT #SmallBusiness #NoCode #GrowthHacking</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     06. SOCIAL MEDIA PRESENCE
+══════════════════════════════════════ -->
+<div class="section anchor" id="social">
+  <div class="section-header">
+    <div class="section-num">06 — Social Media Presence</div>
+    <div class="section-title">Platform Playbook</div>
+    <div class="section-desc">Full setup guide for Facebook, Instagram, LinkedIn, and WhatsApp — profiles, bios, cover images, and posting strategy.</div>
+  </div>
+
+  <!-- Facebook -->
+  <div style="margin-bottom:40px">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
+      <div style="width:32px;height:32px;border-radius:8px;background:#1877f2;display:grid;place-items:center;font-size:18px">f</div>
+      <div style="font-size:18px;font-weight:700">Facebook</div>
+      <span class="tag">Business Page + Group</span>
+    </div>
+
+    <div class="grid-2" style="margin-bottom:16px">
+      <div>
+        <span class="label">Page Preview</span>
+        <div class="fb-mock">
+          <div class="fb-cover">
+            <div class="fb-cover-text">
+              <div class="fb-cover-title">AutoScale 🚀</div>
+              <div class="fb-cover-sub">אוטומציות חכמות | Smart Automation</div>
+            </div>
+          </div>
+          <div class="fb-profile-area">
+            <div class="fb-avatar">
+              <img src="https://raw.githubusercontent.com/richard36901-source/Home-page/main/logo.jpg" alt="AS" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+              <span class="fb-avatar-fallback">AS</span>
+            </div>
+            <div class="fb-info">
+              <div class="fb-name">AutoScale</div>
+              <div class="fb-category">Software Company · AI & Automation</div>
+            </div>
+          </div>
+          <div class="fb-body">
+            <div class="fb-about">עוזרים לעסקים לחסוך זמן, כסף ואנרגיה עם אוטומציות חכמות ובינה מלאכותית 🤖⚡</div>
+            <div class="fb-stats">
+              <div class="fb-stat"><div class="fb-stat-n">1.2K</div><div class="fb-stat-l">Followers</div></div>
+              <div class="fb-stat"><div class="fb-stat-n">4.9★</div><div class="fb-stat-l">Rating</div></div>
+              <div class="fb-stat"><div class="fb-stat-n">50+</div><div class="fb-stat-l">Clients</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <span class="label">Page Setup Specs</span>
+        <div class="card-sm">
+          <table class="spec-table">
+            <tr><td>Page Name</td><td>AutoScale — אוטומציות חכמות</td></tr>
+            <tr><td>Category</td><td>Software Company</td></tr>
+            <tr><td>Username</td><td class="mono">@AutoScaleIL</td></tr>
+            <tr><td>Profile Photo</td><td>logo.jpg — 400×400px</td></tr>
+            <tr><td>Cover Size</td><td>820×312px</td></tr>
+            <tr><td>CTA Button</td><td>Send Message / WhatsApp</td></tr>
+            <tr><td>Website</td><td class="mono">richard36901-source.github.io/Home-page</td></tr>
+          </table>
+        </div>
+        <div class="callout teal" style="margin-top:12px;font-size:12px">
+          <strong>Page Bio (Hebrew):</strong><br>
+          עוזרים לעסקים לחסוך זמן וכסף עם אוטומציות חכמות ובינה מלאכותית 🤖 | צרו קשר ונבנה משהו מדהים יחד ⚡
+        </div>
+        <div class="callout" style="margin-top:8px;font-size:12px">
+          <strong>Page Bio (English):</strong><br>
+          We automate your business so you can focus on growth 🚀 | AI-powered tools for small businesses & startups | Let's build something amazing ⚡
+        </div>
+      </div>
+    </div>
+
+    <div class="card-sm">
+      <span class="label">Facebook Group Setup</span>
+      <table class="spec-table">
+        <tr><th>Field</th><th>Value</th></tr>
+        <tr><td>Group Name</td><td>AutoScale — קהילת האוטומציה וה-AI</td></tr>
+        <tr><td>Privacy</td><td>Public (for reach) or Private (for community)</td></tr>
+        <tr><td>Description</td><td>קהילה לעסקים שרוצים לצמוח חכם. כלים, טיפים ואוטומציות בחינם כל שבוע 🤖⚡ | Free tools, automation tips & AI hacks every week</td></tr>
+        <tr><td>Cover Photo</td><td>Same dark gradient + AutoScale logo, size 1640×856px</td></tr>
+        <tr><td>Pinned Post</td><td>Welcome post with what the group offers + link to website</td></tr>
+        <tr><td>Posting cadence</td><td>3–5x per week</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Instagram -->
+  <div style="margin-bottom:40px">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
+      <div style="width:32px;height:32px;border-radius:8px;background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);display:grid;place-items:center;font-size:16px">📷</div>
+      <div style="font-size:18px;font-weight:700">Instagram</div>
+      <span class="tag">Business Profile</span>
+    </div>
+
+    <div class="grid-2" style="margin-bottom:16px">
+      <div>
+        <span class="label">Profile Preview</span>
+        <div class="ig-mock">
+          <div style="padding:12px;display:flex;align-items:center;gap:14px">
+            <div class="ig-avatar-ring" style="width:60px;height:60px;padding:2px">
+              <div style="width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,#0d2a6e,#0a4a3a);border:2px solid #fff;display:flex;align-items:center;justify-content:center;overflow:hidden">
+                <img src="https://raw.githubusercontent.com/richard36901-source/Home-page/main/logo.jpg" style="width:100%;height:100%;object-fit:cover" onerror="this.style.display='none'">
+              </div>
+            </div>
+            <div>
+              <div style="font-size:14px;font-weight:700;color:#000">autoscale_il</div>
+              <div style="font-size:11px;color:#666;margin-top:2px">Software Company · Automation & AI</div>
+              <div style="display:flex;gap:14px;margin-top:8px">
+                <div style="text-align:center"><div style="font-size:13px;font-weight:700;color:#000">84</div><div style="font-size:10px;color:#666">Posts</div></div>
+                <div style="text-align:center"><div style="font-size:13px;font-weight:700;color:#000">1.4K</div><div style="font-size:10px;color:#666">Followers</div></div>
+                <div style="text-align:center"><div style="font-size:13px;font-weight:700;color:#000">320</div><div style="font-size:10px;color:#666">Following</div></div>
+              </div>
+            </div>
+          </div>
+          <div style="padding:0 12px 12px;font-size:12px;color:#000;line-height:1.6;border-bottom:0.5px solid #e0e0e0">
+            <b>AutoScale 🤖⚡</b><br>
+            אוטומציות חכמות לעסקים שרוצים לצמוח<br>
+            💼 50+ לקוחות מרוצים<br>
+            🔗 link.autoscale.co.il
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;padding:2px">
+            <div style="height:60px;background:linear-gradient(135deg,#060d1a,#0d2a6e)"></div>
+            <div style="height:60px;background:linear-gradient(135deg,#0a4a3a,#060d1a)"></div>
+            <div style="height:60px;background:linear-gradient(135deg,#0d2a6e,#0a4a3a)"></div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <span class="label">Account Setup</span>
+        <div class="card-sm">
+          <table class="spec-table">
+            <tr><td>Username</td><td class="mono">@autoscale_il</td></tr>
+            <tr><td>Account Type</td><td>Business</td></tr>
+            <tr><td>Profile Photo</td><td>logo.jpg — 320×320px min</td></tr>
+            <tr><td>Name</td><td>AutoScale 🤖</td></tr>
+            <tr><td>Category</td><td>Software Company</td></tr>
+            <tr><td>Post frequency</td><td>4–6x per week</td></tr>
+            <tr><td>Story frequency</td><td>Daily</td></tr>
+            <tr><td>Reels</td><td>2–3x per week</td></tr>
+          </table>
+        </div>
+        <div class="callout teal" style="margin-top:12px;font-size:12px">
+          <strong>Bio:</strong><br>
+          🤖 אוטומציות חכמות לעסקים<br>
+          ⚡ חוסכים לך שעות עבודה כל יום<br>
+          💼 AI | Bots | Flows | GitHub<br>
+          📩 DM לייעוץ חינמי
+        </div>
+      </div>
+    </div>
+
+    <div class="card-sm">
+      <span class="label">Instagram Grid Strategy — Content Pillars</span>
+      <div class="grid-3">
+        <div style="text-align:center;padding:8px">
+          <div style="font-size:20px;margin-bottom:4px">💡</div>
+          <div style="font-size:12px;font-weight:700;margin-bottom:3px">Education</div>
+          <div style="font-size:11px;color:var(--muted)">Tips, how-tos, "did you know" posts about automation & AI</div>
+        </div>
+        <div style="text-align:center;padding:8px">
+          <div style="font-size:20px;margin-bottom:4px">🏆</div>
+          <div style="font-size:12px;font-weight:700;margin-bottom:3px">Social Proof</div>
+          <div style="font-size:11px;color:var(--muted)">Client results, testimonials, before/after automation stories</div>
+        </div>
+        <div style="text-align:center;padding:8px">
+          <div style="font-size:20px;margin-bottom:4px">🎯</div>
+          <div style="font-size:12px;font-weight:700;margin-bottom:3px">Behind the Scenes</div>
+          <div style="font-size:11px;color:var(--muted)">Team, process, tools we use, fun agency life content</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LinkedIn -->
+  <div style="margin-bottom:40px">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
+      <div style="width:32px;height:32px;border-radius:8px;background:#0a66c2;display:grid;place-items:center;font-size:16px;color:#fff;font-weight:700;font-family:'Space Mono',monospace">in</div>
+      <div style="font-size:18px;font-weight:700">LinkedIn</div>
+      <span class="tag">Company Page + Personal</span>
+    </div>
+
+    <div class="grid-2">
+      <div>
+        <span class="label">Company Page Preview</span>
+        <div class="li-mock">
+          <div class="li-cover"></div>
+          <div class="li-profile-area">
+            <div class="li-avatar">
+              <img src="https://raw.githubusercontent.com/richard36901-source/Home-page/main/logo.jpg" alt="AS" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+              <span class="li-avatar-fb">AS</span>
+            </div>
+            <div class="li-info">
+              <div class="li-name">AutoScale</div>
+              <div class="li-title">AI & Business Automation · Israel & Global</div>
+            </div>
+          </div>
+          <div class="li-body">
+            <div class="li-tagline">We automate businesses so founders can focus on what matters — growing 🚀 | AI tools, chatbots, flows & smart integrations for SMBs and startups.</div>
+            <div class="li-tags">
+              <span class="li-tag">Automation</span>
+              <span class="li-tag">AI</span>
+              <span class="li-tag">StartupIsrael</span>
+              <span class="li-tag">NoCode</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <span class="label">LinkedIn Setup</span>
+        <div class="card-sm">
+          <table class="spec-table">
+            <tr><td>Company Name</td><td>AutoScale</td></tr>
+            <tr><td>Tagline</td><td>Automate. Scale. Grow.</td></tr>
+            <tr><td>Industry</td><td>IT Services & IT Consulting</td></tr>
+            <tr><td>Company Size</td><td>2–10 employees</td></tr>
+            <tr><td>Logo</td><td>logo.jpg — 300×300px</td></tr>
+            <tr><td>Cover</td><td>1584×396px — dark gradient</td></tr>
+            <tr><td>Post frequency</td><td>3–4x per week</td></tr>
+          </table>
+        </div>
+        <div class="callout" style="margin-top:12px;font-size:12px">
+          <strong>About Section:</strong><br>
+          AutoScale is an Israeli AI & automation agency helping SMBs, startups, and mid-size companies save time and grow faster through intelligent business automations and AI-powered tools. We build WhatsApp bots, CRM flows, web automations, and custom AI solutions that work 24/7.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WhatsApp -->
+  <div style="margin-bottom:20px">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
+      <div style="width:32px;height:32px;border-radius:8px;background:#25D366;display:grid;place-items:center;font-size:18px">💬</div>
+      <div style="font-size:18px;font-weight:700">WhatsApp</div>
+      <span class="tag">Business + Broadcast + Groups</span>
+    </div>
+
+    <div class="grid-2">
+      <div>
+        <span class="label">Business Profile</span>
+        <div class="wa-mock">
+          <div class="wa-header">
+            <div class="wa-avatar">
+              <img src="https://raw.githubusercontent.com/richard36901-source/Home-page/main/logo.jpg" alt="AS" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+              <span class="wa-avatar-fb">AS</span>
+            </div>
+            <div>
+              <div class="wa-name">AutoScale 🤖</div>
+              <div class="wa-status">● Online — usually replies instantly</div>
+            </div>
+          </div>
+          <div class="wa-body">
+            <div class="wa-msg">
+              👋 היי! ברוכים הבאים ל-AutoScale<br><br>
+              אנחנו מתמחים ב:<br>
+              ⚡ אוטומציות עסקיות<br>
+              🤖 פתרונות AI<br>
+              📱 בוטים ל-WhatsApp<br><br>
+              איך אפשר לעזור?
+              <div class="wa-time">09:00 ✓✓</div>
+            </div>
+            <div class="wa-msg-sent">
+              שלום! אני מעוניין לשמוע על אוטומציה לעסק שלי
+              <div class="wa-time" style="text-align:right">09:01 ✓✓</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <span class="label">WhatsApp Strategy</span>
+        <div class="card-sm">
+          <table class="spec-table">
+            <tr><td>Account Type</td><td>WhatsApp Business</td></tr>
+            <tr><td>Business Name</td><td>AutoScale 🤖</td></tr>
+            <tr><td>Profile Photo</td><td>logo.jpg — 500×500px</td></tr>
+            <tr><td>Business Hours</td><td>א׳–ה׳ 9:00–18:00</td></tr>
+            <tr><td>Away Message</td><td>Auto-reply outside hours</td></tr>
+            <tr><td>Quick Replies</td><td>Set up for common questions</td></tr>
+            <tr><td>Broadcast List</td><td>Weekly tips & updates</td></tr>
+            <tr><td>Groups</td><td>1 main community group</td></tr>
+          </table>
+        </div>
+        <div class="callout teal" style="margin-top:12px;font-size:12px">
+          <strong>Auto-reply message:</strong><br>
+          👋 היי! קיבלנו את הודעתך<br>
+          נחזור אליך בהקדם 🚀<br>
+          לבינתיים: richard36901-source.github.io/Home-page
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     07. CONTENT & POSTS
+══════════════════════════════════════ -->
+<div class="section anchor" id="posts">
+  <div class="section-header">
+    <div class="section-num">07 — Content Templates & Sample Posts</div>
+    <div class="section-title">Ready-to-Use Posts</div>
+    <div class="section-desc">Copy-paste posts with matching visual templates. Always add the AutoScale watermark (logo, bottom right) to all visual posts.</div>
+  </div>
+
+  <!-- Facebook Posts -->
+  <div style="margin-bottom:32px">
+    <div style="font-size:14px;font-weight:700;margin-bottom:14px;color:var(--text)">📘 Facebook Posts</div>
+    <div class="grid-2">
+      <div class="post-mock">
+        <div class="post-header">
+          <div class="post-avatar"><img src="https://raw.githubusercontent.com/richard36901-source/Home-page/main/logo.jpg" alt="AS" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="post-avatar-fb">AS</span></div>
+          <div><div class="post-name">AutoScale</div><div class="post-meta">Software Company · Just now</div></div>
+        </div>
+        <div class="post-img">
+          <div class="post-img-text">שלחת 200 הודעות<br>ידנית היום? 🤔</div>
+        </div>
+        <div class="post-caption">
+          <span>יש לנו חדשות טובות.</span><br><br>
+          אוטומציה של WhatsApp יכולה לחסוך לך 3-4 שעות עבודה ביום 🚀<br><br>
+          בוט חכם שעונה ללקוחות, שולח תזכורות, ומעדכן את ה-CRM — בלי שתגע בו.<br><br>
+          💬 כתבו לנו "אני רוצה לדעת" ונשלח לכם מידע חינם!
+          <div class="post-hashtags">#אוטומציה #WhatsApp #עסקיםקטנים #AutoScale</div>
+        </div>
+        <div class="post-reactions">👍 47 &nbsp; 💬 12 &nbsp; ↗️ Share</div>
+      </div>
+
+      <div class="post-mock">
+        <div class="post-header">
+          <div class="post-avatar"><img src="https://raw.githubusercontent.com/richard36901-source/Home-page/main/logo.jpg" alt="AS" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="post-avatar-fb">AS</span></div>
+          <div><div class="post-name">AutoScale</div><div class="post-meta">Software Company · 2 hours ago</div></div>
+        </div>
+        <div class="post-img">
+          <div class="post-img-text">AI עובד בשבילך<br>גם כשאתה ישן 🌙</div>
+        </div>
+        <div class="post-caption">
+          <span>כמה זמן אתה מבזבז על משימות שחוזרות על עצמן?</span><br><br>
+          ❌ לענות לאותן שאלות שוב ושוב<br>
+          ❌ להכין דוחות ידנית<br>
+          ❌ לשלוח תזכורות ללקוחות<br><br>
+          ✅ AutoScale בונה לך מערכת שעושה את הכל אוטומטית.<br><br>
+          📩 DM לפגישת היכרות חינמית
+          <div class="post-hashtags">#AI #בינהמלאכותית #טכנולוגיה #AutoScale</div>
+        </div>
+        <div class="post-reactions">👍 63 &nbsp; 💬 8 &nbsp; ↗️ Share</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Instagram Posts -->
+  <div style="margin-bottom:32px">
+    <div style="font-size:14px;font-weight:700;margin-bottom:14px;color:var(--text)">📷 Instagram Posts</div>
+    <div class="grid-2">
+      <div class="ig-mock">
+        <div class="ig-header">
+          <div class="ig-avatar-ring"><div class="ig-avatar-inner"><img src="https://raw.githubusercontent.com/richard36901-source/Home-page/main/logo.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="ig-avatar-fb">AS</span></div></div>
+          <div><div class="ig-username">autoscale_il</div></div>
+        </div>
+        <div class="ig-img"><div class="ig-img-text">5 אוטומציות שכל<br>עסק צריך ב-2025 ⚡</div></div>
+        <div class="ig-actions">❤️ 🔖 ✈️</div>
+        <div class="ig-caption">
+          <b>autoscale_il</b> האם אתה עדיין עושה את אלה ידנית? 😅<br><br>
+          1️⃣ מענה ראשוני ללקוחות<br>
+          2️⃣ תזכורות לפגישות<br>
+          3️⃣ עדכון CRM<br>
+          4️⃣ דוחות שבועיים<br>
+          5️⃣ שליחת חשבוניות<br><br>
+          כל אחת מאלה אפשר לאוטמט ב-48 שעות 🚀
+          <div class="ig-tags">#אוטומציה #AI #עסקיםקטנים #autoscale_il</div>
+        </div>
+      </div>
+
+      <div class="ig-mock">
+        <div class="ig-header">
+          <div class="ig-avatar-ring"><div class="ig-avatar-inner"><img src="https://raw.githubusercontent.com/richard36901-source/Home-page/main/logo.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="ig-avatar-fb">AS</span></div></div>
+          <div><div class="ig-username">autoscale_il</div></div>
+        </div>
+        <div class="ig-img"><div class="ig-img-text">לקוח חסך 15 שעות<br>עבודה בשבוע 🏆</div></div>
+        <div class="ig-actions">❤️ 🔖 ✈️</div>
+        <div class="ig-caption">
+          <b>autoscale_il</b> סיפור הצלחה אמיתי 💪<br><br>
+          עסק קטן עם 3 עובדים שהיה מבזבז 15 שעות שבועיות על ניהול הזמנות ידני.<br><br>
+          בנינו להם:<br>
+          🤖 בוט WhatsApp לקבלת הזמנות<br>
+          📊 דוחות אוטומטיים<br>
+          📱 עדכוני לקוחות בזמן אמת<br><br>
+          התוצאה: 15 שעות חסכון, 0 שגיאות 🎯
+          <div class="ig-tags">#AutoScale #SuccessStory #עסקים #אוטומציה</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LinkedIn Posts -->
+  <div style="margin-bottom:32px">
+    <div style="font-size:14px;font-weight:700;margin-bottom:14px;color:var(--text)">💼 LinkedIn Posts</div>
+    <div class="grid-2">
+      <div class="card-sm" style="background:#fff;color:#000">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+          <div style="width:36px;height:36px;border-radius:6px;background:linear-gradient(135deg,#0d2a6e,#0a4a3a);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0">
+            <img src="https://raw.githubusercontent.com/richard36901-source/Home-page/main/logo.jpg" style="width:100%;height:100%;object-fit:cover" onerror="this.style.display='none'">
+          </div>
+          <div>
+            <div style="font-size:12px;font-weight:700;color:#000">AutoScale</div>
+            <div style="font-size:10px;color:#666">AI & Automation Agency · 500+ followers</div>
+          </div>
+        </div>
+        <div style="font-size:12px;color:#1c1e21;line-height:1.7">
+          <strong>The hidden cost of manual work is killing small businesses. 🧵</strong><br><br>
+          Most SMB owners spend 25–35% of their week on tasks that could be automated.<br><br>
+          That's 10+ hours per week on:<br>
+          → Answering repetitive customer questions<br>
+          → Updating spreadsheets manually<br>
+          → Sending follow-up emails one by one<br>
+          → Generating reports from scratch<br><br>
+          At AutoScale, we've helped 50+ businesses reclaim that time using AI automations that cost less than a part-time employee.<br><br>
+          What would you do with 10 extra hours per week? 👇
+        </div>
+        <div style="font-size:10px;color:#0a66c2;margin-top:8px">#BusinessAutomation #AI #SMB #Productivity #AutoScale</div>
+      </div>
+
+      <div class="card-sm" style="background:#fff;color:#000">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+          <div style="width:36px;height:36px;border-radius:6px;background:linear-gradient(135deg,#0d2a6e,#0a4a3a);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0">
+            <img src="https://raw.githubusercontent.com/richard36901-source/Home-page/main/logo.jpg" style="width:100%;height:100%;object-fit:cover" onerror="this.style.display='none'">
+          </div>
+          <div>
+            <div style="font-size:12px;font-weight:700;color:#000">AutoScale</div>
+            <div style="font-size:10px;color:#666">AI & Automation Agency</div>
+          </div>
+        </div>
+        <div style="font-size:12px;color:#1c1e21;line-height:1.7">
+          <strong>We're officially open to international clients. 🌍</strong><br><br>
+          AutoScale started as an Israeli automation agency. Today, we're expanding.<br><br>
+          Our services are now available globally — English-speaking markets welcome.<br><br>
+          What we offer:<br>
+          🤖 WhatsApp & chatbot automation<br>
+          ⚡ Business workflow automation<br>
+          🧠 AI integrations (GPT, Claude, etc.)<br>
+          🌐 GitHub Pages websites<br><br>
+          DM us or visit our site to start a conversation.
+        </div>
+        <div style="font-size:10px;color:#0a66c2;margin-top:8px">#GlobalExpansion #AI #Automation #Israel #Tech</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WhatsApp Broadcast -->
+  <div style="margin-bottom:20px">
+    <div style="font-size:14px;font-weight:700;margin-bottom:14px;color:var(--text)">💬 WhatsApp Broadcast Messages</div>
+    <div class="grid-2">
+      <div class="wa-mock">
+        <div class="wa-header">
+          <div class="wa-avatar"><img src="https://raw.githubusercontent.com/richard36901-source/Home-page/main/logo.jpg" alt="AS" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="wa-avatar-fb">AS</span></div>
+          <div><div class="wa-name">AutoScale 🤖</div><div class="wa-status">Broadcast — Weekly Tip</div></div>
+        </div>
+        <div class="wa-body">
+          <div class="wa-msg">
+            📊 <b>טיפ השבוע מ-AutoScale:</b><br><br>
+            ידעתם שאפשר לחסוך 5+ שעות שבועיות רק באוטומציית WhatsApp?<br><br>
+            ✅ מענה אוטומטי ללקוחות<br>
+            ✅ שליחת תזכורות לפגישות<br>
+            ✅ עדכון מצב הזמנות<br><br>
+            📩 ענו "רוצה לדעת יותר" ונשלח לכם מדריך חינמי!<br><br>
+            — צוות AutoScale 🚀
+            <div class="wa-time">Weekly tip ✓✓</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-sm">
+        <span class="label">Broadcast Calendar</span>
+        <table class="spec-table">
+          <tr><td>Monday</td><td>Weekly tip / educational content</td></tr>
+          <tr><td>Wednesday</td><td>Case study / success story</td></tr>
+          <tr><td>Friday</td><td>Weekend offer or event reminder</td></tr>
+          <tr><td>Monthly</td><td>New service announcement</td></tr>
+        </table>
+        <div class="callout teal" style="margin-top:12px;font-size:12px">
+          Keep broadcast messages short (under 200 words), personal in tone, and always include one clear CTA. Never broadcast more than 3x per week.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     08. DESIGN RULES FOR WEBSITES
+══════════════════════════════════════ -->
+<div class="section anchor" id="rules">
+  <div class="section-header">
+    <div class="section-num">08 — Rules for GitHub Pages Websites</div>
+    <div class="section-title">Website Standards</div>
+    <div class="section-desc">Every AutoScale GitHub Pages site must follow these rules so all sites feel like one cohesive brand.</div>
+  </div>
+
+  <div class="card" style="margin-bottom:20px">
+    <span class="label">Mandatory HTML Head Template</span>
+    <div style="background:#0a1220;border-radius:8px;padding:14px;font-family:'Space Mono',monospace;font-size:11px;color:#e8f0ff;line-height:1.8;overflow-x:auto;border:1px solid var(--border)">
+      &lt;meta charset="utf-8"&gt;<br>
+      &lt;meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"&gt;<br>
+      &lt;meta name="theme-color" content="#060d1a"&gt;<br>
+      &lt;meta name="apple-mobile-web-app-capable" content="yes"&gt;<br>
+      &lt;!-- Tab favicon --&gt;<br>
+      &lt;link rel="icon" type="image/jpeg" href="<span style="color:#1dffd4">https://raw.githubusercontent.com/richard36901-source/Home-page/main/logo.jpg</span>"&gt;<br>
+      &lt;link rel="apple-touch-icon" href="<span style="color:#1dffd4">https://raw.githubusercontent.com/richard36901-source/Home-page/main/logo.jpg</span>"&gt;<br>
+      &lt;!-- Fonts --&gt;<br>
+      &lt;link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet"&gt;
+    </div>
+  </div>
+
+  <div class="grid-2" style="margin-bottom:20px">
+    <div class="card-sm">
+      <span class="label">Mandatory CSS Variables</span>
+      <div style="background:#0a1220;border-radius:8px;padding:12px;font-family:'Space Mono',monospace;font-size:10.5px;color:#e8f0ff;line-height:1.9;border:1px solid var(--border)">
+        <span style="color:#6a85b6">--bg:</span> #060d1a;<br>
+        <span style="color:#6a85b6">--glass:</span> rgba(12,26,56,0.55);<br>
+        <span style="color:#6a85b6">--border:</span> rgba(80,140,255,0.13);<br>
+        <span style="color:#6a85b6">--text:</span> #e8f0ff;<br>
+        <span style="color:#6a85b6">--muted:</span> #6a85b6;<br>
+        <span style="color:#6a85b6">--accent:</span> #3a8ef6;<br>
+        <span style="color:#6a85b6">--accent2:</span> #1dffd4;<br>
+        <span style="color:#6a85b6">--radius:</span> 18px;
+      </div>
+    </div>
+    <div class="card-sm">
+      <span class="label">Background Layers (Always Use)</span>
+      <div style="font-size:12px;color:var(--text2);line-height:1.8">
+        <div style="margin-bottom:6px"><span style="color:var(--accent2)">Layer 1:</span> Solid background #060d1a</div>
+        <div style="margin-bottom:6px"><span style="color:var(--accent2)">Layer 2:</span> Radial gradient overlays (blue top-left, teal top-right)</div>
+        <div style="margin-bottom:6px"><span style="color:var(--accent2)">Layer 3:</span> 40×40px grid pattern at 4% opacity</div>
+        <div style="margin-bottom:6px"><span style="color:var(--accent2)">Cards:</span> Glass + backdrop-filter: blur(12px)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="label">Component Checklist — Every Page Must Have</span>
+    <div class="grid-2">
+      <div>
+        <div class="rule-item">Header with logo (72×72px, border-radius 18px)</div>
+        <div class="rule-item">Brand name gradient text "AutoScale"</div>
+        <div class="rule-item">Tagline "אוטומציות חכמות" in Space Mono</div>
+        <div class="rule-item">Section labels in Space Mono, uppercase, 10.5px, 2px tracking</div>
+        <div class="rule-item">Glass cards with backdrop-filter blur</div>
+      </div>
+      <div>
+        <div class="rule-item">Tab favicon pointing to logo.jpg URL</div>
+        <div class="rule-item">RTL direction for Hebrew pages (dir="rtl")</div>
+        <div class="rule-item">Mobile-responsive (max-width: 560px centered)</div>
+        <div class="rule-item">Footer with "עודכן לאחרונה" date in Space Mono</div>
+        <div class="rule-item">Body background grid + radial gradients</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="do-dont" style="margin-top:20px">
+    <div class="do-box">
+      <div class="do-label">✅ Always Do</div>
+      <div class="rule-item">Use the exact CSS variables defined above</div>
+      <div class="rule-item">Use Sora + Space Mono — no other fonts</div>
+      <div class="rule-item">Dark background on all AutoScale pages</div>
+      <div class="rule-item">Add the favicon URL to every page head</div>
+      <div class="rule-item">Use glass cards with backdrop-filter</div>
+      <div class="rule-item">Add radial gradient background layers</div>
+      <div class="rule-item">Center content max-width 560px (mobile-first)</div>
+    </div>
+    <div class="dont-box">
+      <div class="dont-label">❌ Never Do</div>
+      <div class="rule-item">Don't use white or light backgrounds</div>
+      <div class="rule-item">Don't use Arial, Inter, Roboto, or system fonts</div>
+      <div class="rule-item">Don't use purple gradients (generic AI look)</div>
+      <div class="rule-item">Don't change the color variables</div>
+      <div class="rule-item">Don't use solid borders without transparency</div>
+      <div class="rule-item">Don't skip the favicon link tag</div>
+      <div class="rule-item">Don't hardcode pixel sizes without CSS variables</div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:20px">
+    <span class="label">Existing Pages Reference</span>
+    <table class="spec-table">
+      <tr><th>Page</th><th>URL</th><th>Purpose</th></tr>
+      <tr><td>Home / Links</td><td class="mono">Home-page/index.html</td><td>Main landing, links to all pages</td></tr>
+      <tr><td>Payment</td><td class="mono">Home-page/payment.html</td><td>Bank transfer, Bit, credit card</td></tr>
+      <tr><td>Service Terms</td><td class="mono">Home-page/ (terms page)</td><td>Response times, service terms</td></tr>
+      <tr><td>Brand Manual</td><td class="mono">This file</td><td>Design system, this document</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     09. POSTING CALENDAR
+══════════════════════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-num">09 — Content Calendar</div>
+    <div class="section-title">Weekly Posting Schedule</div>
+    <div class="section-desc">Consistent posting is more important than perfect content. Follow this schedule to build audience and reach.</div>
+  </div>
+
+  <div class="card">
+    <table class="spec-table">
+      <tr><th>Day</th><th>Facebook</th><th>Instagram</th><th>LinkedIn</th><th>WhatsApp</th></tr>
+      <tr><td>ראשון / Monday</td><td>Educational tip post</td><td>Carousel — tips</td><td>Industry insight</td><td>Weekly tip broadcast</td></tr>
+      <tr><td>שני / Tuesday</td><td>Story</td><td>Reel — quick demo</td><td>—</td><td>—</td></tr>
+      <tr><td>שלישי / Wednesday</td><td>Client success story</td><td>Post — social proof</td><td>Case study</td><td>Success story broadcast</td></tr>
+      <tr><td>רביעי / Thursday</td><td>—</td><td>Story + Poll</td><td>—</td><td>—</td></tr>
+      <tr><td>חמישי / Friday</td><td>Behind the scenes / offer</td><td>Post — team/fun</td><td>Weekly wrap-up</td><td>Weekend offer (optional)</td></tr>
+    </table>
+  </div>
+
+  <div class="callout teal" style="margin-top:20px">
+    🎯 <strong>Content Ratio Rule:</strong> 60% educational / value content · 25% social proof / testimonials · 15% direct promotion. This builds trust before selling.
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="f-logo">AutoScale</div>
+  <p>Brand Manual v1.0 &nbsp;·&nbsp; Internal & Agency Use Only &nbsp;·&nbsp; <span id="fdate"></span></p>
+  <p style="margin-top:6px">richard36901-source.github.io/Home-page &nbsp;·&nbsp; richard36901@gmail.com</p>
+</footer>
+
+</div><!-- /page -->
+
+<script>
+const d = new Date();
+const opts = {year:'numeric',month:'long',day:'numeric'};
+const s = d.toLocaleDateString('en-US',opts);
+document.getElementById('hdate').textContent = s;
+document.getElementById('fdate').textContent = s;
+</script>
+</body>
+</html>
